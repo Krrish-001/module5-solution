@@ -1,0 +1,13 @@
+<div class="user-info">
+    <h2>Your Information</h2>
+    <div ng-if="myInfoCtrl.userInfo">
+        <p><strong>Name:</strong> {{myInfoCtrl.userInfo.firstName}} {{myInfoCtrl.userInfo.lastName}}</p>
+        <p><strong>Email:</strong> {{myInfoCtrl.userInfo.email}}</p>
+        <p><strong>Phone:</strong> {{myInfoCtrl.userInfo.phone}}</p>
+        <p><strong>Favorite Dish:</strong> {{myInfoCtrl.userInfo.menuItem.name}}</p>
+        <img ng-src="{{myInfoCtrl.userInfo.menuItem.imageUrl}}" alt="Menu Item Image" width="100">
+    </div>
+    <div ng-if="myInfoCtrl.message">
+        <p ng-bind-html="myInfoCtrl.message"></p>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="signup-container">
+    <h2>Sign Up for Our Newsletter!</h2>
+    
+    <form name="signupForm" ng-submit="signupCtrl.submitForm()" novalidate>
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" ng-model="signupCtrl.firstName" required>
+        <div ng-show="signupForm.firstName.$touched && signupForm.firstName.$invalid">
+            First name is required.
+        </div>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" ng-model="signupCtrl.lastName" required>
+        <div ng-show="signupForm.lastName.$touched && signupForm.lastName.$invalid">
+            Last name is required.
+        </div>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" ng-model="signupCtrl.email" required>
+        <div ng-show="signupForm.email.$touched && signupForm.email.$invalid">
+            A valid email is required.
+        </div>
+
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" ng-model="signupCtrl.phone" required>
+        <div ng-show="signupForm.phone.$touched && signupForm.phone.$invalid">
+            Phone number is required.
+        </div>
+
+        <label for="favoriteDish">Favorite Dish (Menu Number):</label>
+        <input type="text" id="favoriteDish" ng-model="signupCtrl.favoriteDish" ng-blur="signupCtrl.checkDish()" required>
+        <div ng-show="signupCtrl.dishError">
+            No such menu number exists.
+        </div>
+
+        <button type="submit" ng-disabled="signupForm.$invalid">Submit</button>
+    </form>
+
+    <div ng-show="signupCtrl.isSaved">
+        <p>Your information has been saved!</p>
+    </div>
+</div>
